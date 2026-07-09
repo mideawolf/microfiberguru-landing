@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Hsu - Premium Microfiber Towel Solutions</title>
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #2563eb;
+            --accent-color: #f59e0b;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content > p {
+            font-size: 1.15rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-main);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media(min-width: 768px) {
+            .about-features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .about-feature-item {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 12px;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .about-feature-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        /* Why Choose Us Section */
+        .features-section {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-title {
+            font-size: 1.35rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .feature-desc {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--white);
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: var(--text-main);
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .footer-content h2 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-content h4 {
+            font-weight: 400;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 24px 48px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            font-size: 1.25rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #cbd5e1;
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-header h2 { font-size: 2rem; }
+            .about-feature-item { padding: 24px; }
+            .contact-info { padding: 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Premium Microfiber Towel Solutions</h1>
+            <p>Helping Global Brands Source High-Performance Microfiber Products | 15-Year Factory Expert | Cross-Border E-commerce Partner</p>
+            <a href="https://drive.google.com/file/d/1MOiJKmGA8cVKPjqpsU3Mem4O9aEi3Bfu/view?usp=sharing" target="_blank" class="btn">
+                View Corporate Catalog
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Understanding Microfiber Technology</h2>
+                <p>The Ultimate Cleaning & Detailing Material</p>
+            </div>
+            
+            <div class="about-content">
+                <p>Microfiber is a synthetic fabric composed of ultra-fine microscopic fibers—typically a blend of polyester and polyamide. These fibers are split to create millions of tiny hooks and loops, making microfiber vastly superior to traditional cotton in absorbing liquids and trapping dirt.</p>
+                
+                <div class="about-features">
+                    <div class="about-feature-item">
+                        <h3>Superior Absorbency</h3>
+                        <p>Microfiber towels can absorb up to 7 times their weight in water, drying surfaces quickly and leaving zero streaks behind.</p>
+                    </div>
+                    <div class="about-feature-item">
+                        <h3>Exceptional Cleaning Power</h3>
+                        <p>The split-fiber structure acts like a magnet for dust, dirt, and grease, trapping particles deep within the fabric instead of pushing them around.</p>
+                    </div>
+                    <div class="about-feature-item">
+                        <h3>Lint-Free & Non-Abrasive</h3>
+                        <p>Incredibly soft and durable. Engineered to be safe on delicate surfaces like car paint, glass, and screens without scratching or shedding lint.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us as Your Partner?</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3 class="feature-title">Factory-Direct Advantage</h3>
+                    <p class="feature-desc">Get the most competitive pricing straight from the source. No trading markups, just pure value for your business.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Tailored Blends & GSM</h3>
+                    <p class="feature-desc">We offer customizable polyester/polyamide ratios and varying GSM (thickness) to suit automotive detailing, household cleaning, or sports use.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3 class="feature-title">Proven Punctuality</h3>
+                    <p class="feature-desc">Stop worrying about delays. We take pride in our logistics, with 96% of our orders completed ahead of schedule.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Quality You Can Trust</h3>
+                    <p class="feature-desc">Our rigorous 5-tier QC protocol ensures durable, color-fast towels with perfectly finished edges to protect your brand reputation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3 class="feature-title">Fully Certified & Compliant</h3>
+                    <p class="feature-desc">We meet strict global standards (BSCI, ISO, OEKO-TEX) ensuring our microfiber production is safe, reliable, and consistent.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3 class="feature-title">Transparent & Ethical</h3>
+                    <p class="feature-desc">We operate with integrity. We are "audit-ready" for any social responsibility or security assessments you require.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore Our Full Product Range</h2>
+            </div>
+            <p>Discover our comprehensive specifications, GSM options, edgeless designs, and high-performance microfiber solutions for global brands.</p>
+            <a href="https://drive.google.com/file/d/1MOiJKmGA8cVKPjqpsU3Mem4O9aEi3Bfu/view?usp=sharing" target="_blank" class="btn">
+                📥 Open Product Catalog (PDF)
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2>Get In Touch</h2>
+                <h4>Chris Hsu | Business Development Specialist</h4>
+                
+                <div class="contact-info">
+                    Email: <a href="mailto:chrishsu@microfiberguru.com">chrishsu@microfiberguru.com</a>
+                </div>
+                
+                <p class="quote">"I am dedicated to helping global brands build efficient supply chains and source top-tier microfiber products."</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 Chris Hsu - Premium Microfiber Towel Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
